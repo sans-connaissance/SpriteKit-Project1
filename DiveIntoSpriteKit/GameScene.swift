@@ -17,6 +17,12 @@ class GameScene: SKScene {
         let background = SKSpriteNode(imageNamed: "road.jpg")
         background.zPosition = -1
         addChild(background)
+        
+        if let particles = SKEmitterNode(fileNamed: "Mud") {
+            particles.advanceSimulationTime(10)
+            particles.position.x = 512
+            addChild(particles)
+        }
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
