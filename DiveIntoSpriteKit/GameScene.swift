@@ -11,6 +11,10 @@ import SpriteKit
 
 @objcMembers
 class GameScene: SKScene {
+    
+    let player = SKSpriteNode(imageNamed: "player-motorbike")
+    
+    
     override func didMove(to view: SKView) {
         // this method is called when your game scene is ready to run
         
@@ -23,6 +27,11 @@ class GameScene: SKScene {
             particles.position.x = 512
             addChild(particles)
         }
+        
+        player.position.x = -400
+        player.zPosition = 1
+        addChild(player)
+        
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
