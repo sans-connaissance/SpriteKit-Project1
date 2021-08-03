@@ -31,6 +31,9 @@ class GameScene: SKScene {
             addChild(particles)
         }
         
+        player.physicsBody = SKPhysicsBody(texture: player.texture!, size: player.size)
+        player.physicsBody?.categoryBitMask = 1
+        
         player.position.x = -400
         player.zPosition = 1
         addChild(player)
@@ -82,9 +85,34 @@ class GameScene: SKScene {
         
         //assigns size of the physics body detector -- determined by the sprite/image itself
         sprite.physicsBody = SKPhysicsBody(texture: sprite.texture!, size: sprite.size)
-        sprite.physicsBody?.velocity = CGVector(dx: -500, dy: 0)
+        sprite.physicsBody?.velocity = CGVector(dx: -250, dy: 0)
         sprite.physicsBody?.linearDamping = 0
-        addChild(sprite)
+        
+        //contactTestBitMask set to 1 means that it will collide with physics bodies of categoryBitMask = 1
+        sprite.physicsBody?.contactTestBitMask = 1
+        sprite.physicsBody?.categoryBitMask = 0
+        
+        
+        let sprite2 = SKSpriteNode(imageNamed: "car")
+        sprite2.position = CGPoint(x: 1200, y: Int.random(in: -350...350))
+        sprite2.name = "car"
+        sprite2.zPosition = 1
+        
+        //assigns size of the physics body detector -- determined by the sprite/image itself
+        sprite2.physicsBody = SKPhysicsBody(texture: sprite2.texture!, size: sprite2.size)
+        sprite2.physicsBody?.velocity = CGVector(dx: -250, dy: 0)
+        sprite2.physicsBody?.linearDamping = 0
+        sprite2.physicsBody?.contactTestBitMask = 1
+        sprite2.physicsBody?.categoryBitMask = 0
+        
+        if sprite.position.y > 200 {
+            addChild(sprite)
+            
+        } else {
+        
+        addChild(sprite2)
+        }
+        
         
         
     }
