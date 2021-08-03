@@ -10,7 +10,7 @@ import GameplayKit
 import SpriteKit
 
 @objcMembers
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     
     let player = SKSpriteNode(imageNamed: "player-motorbike")
     var touchingPlayer = false
@@ -40,6 +40,8 @@ class GameScene: SKScene {
         
         gameTimer = Timer.scheduledTimer(timeInterval: 0.35, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
         
+        //report on physical contact (also requires class protocol SKPhysicsContactDelegate above
+        physicsWorld.contactDelegate = self
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -112,9 +114,23 @@ class GameScene: SKScene {
         
         addChild(sprite2)
         }
-        
-        
-        
+
     }
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        guard let nodeA = contact.bodyA.node else { return }
+        guard let nodeB = contact.bodyB.node else { return }
+        
+        if nodeA == player {
+            playerHit(nodeB)
+        } else {
+            playerHit(nodeA)
+        }
+    }
+    
+    func playerHit(_ node: SKNode) {
+        player.removeFromParent()
+    }
+    
 }
 
