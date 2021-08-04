@@ -12,6 +12,8 @@ import SpriteKit
 @objcMembers
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
+    
+    let music = SKAudioNode(fileNamed: "cyborg-ninja.mp3")
     let player = SKSpriteNode(imageNamed: "player-motorbike")
     var touchingPlayer = false
     let scoreLabel = SKLabelNode(fontNamed: "AvenirNextCondensed-Bold")
@@ -20,6 +22,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             scoreLabel.text = "Score: \(score)"
         }
     }
+    
     
     var gameTimer: Timer?
     
@@ -31,6 +34,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         background.zPosition = -1
         addChild(background)
         
+        addChild(music)
         
         
         if let particles = SKEmitterNode(fileNamed: "Mud") {

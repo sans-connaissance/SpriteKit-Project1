@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		41B1325526B85AA50038B98D /* Mud.sks in Resources */ = {isa = PBXBuildFile; fileRef = 41B1325326B85AA50038B98D /* Mud.sks */; };
 		41B1325626B85AA50038B98D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41B1325426B85AA50038B98D /* Assets.xcassets */; };
+		41B1325826BA13930038B98D /* cyborg-ninja.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 41B1325726BA13930038B98D /* cyborg-ninja.mp3 */; };
+		41B1325A26BA14580038B98D /* explosion.wav in Resources */ = {isa = PBXBuildFile; fileRef = 41B1325926BA14580038B98D /* explosion.wav */; };
 		51C6E4BE1F951D59001794D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C6E4BD1F951D59001794D5 /* AppDelegate.swift */; };
 		51C6E4C01F951D59001794D5 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 51C6E4BF1F951D59001794D5 /* GameScene.sks */; };
 		51C6E4C41F951D59001794D5 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C6E4C31F951D59001794D5 /* GameScene.swift */; };
@@ -21,6 +23,8 @@
 /* Begin PBXFileReference section */
 		41B1325326B85AA50038B98D /* Mud.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Mud.sks; sourceTree = "<group>"; };
 		41B1325426B85AA50038B98D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		41B1325726BA13930038B98D /* cyborg-ninja.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "cyborg-ninja.mp3"; sourceTree = "<group>"; };
+		41B1325926BA14580038B98D /* explosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = explosion.wav; sourceTree = "<group>"; };
 		51C6E4BA1F951D59001794D5 /* DiveIntoSpriteKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiveIntoSpriteKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51C6E4BD1F951D59001794D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51C6E4BF1F951D59001794D5 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -47,6 +51,7 @@
 			isa = PBXGroup;
 			children = (
 				41B1325326B85AA50038B98D /* Mud.sks */,
+				41B1325726BA13930038B98D /* cyborg-ninja.mp3 */,
 				41B1325426B85AA50038B98D /* Assets.xcassets */,
 				51C6E4BC1F951D59001794D5 /* DiveIntoSpriteKit */,
 				51C6E4BB1F951D59001794D5 /* Products */,
@@ -66,6 +71,7 @@
 			children = (
 				51C6E4BD1F951D59001794D5 /* AppDelegate.swift */,
 				51C6E4BF1F951D59001794D5 /* GameScene.sks */,
+				41B1325926BA14580038B98D /* explosion.wav */,
 				51C6E4C31F951D59001794D5 /* GameScene.swift */,
 				51C6E4C51F951D59001794D5 /* GameViewController.swift */,
 				51C6E4C71F951D59001794D5 /* Main.storyboard */,
@@ -138,9 +144,11 @@
 			files = (
 				51C6E4C91F951D59001794D5 /* Main.storyboard in Resources */,
 				41B1325526B85AA50038B98D /* Mud.sks in Resources */,
+				41B1325A26BA14580038B98D /* explosion.wav in Resources */,
 				51C6E4C01F951D59001794D5 /* GameScene.sks in Resources */,
 				51C6E4CB1F951D59001794D5 /* Assets.xcassets in Resources */,
 				41B1325626B85AA50038B98D /* Assets.xcassets in Resources */,
+				41B1325826BA13930038B98D /* cyborg-ninja.mp3 in Resources */,
 				51C6E4CE1F951D59001794D5 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
