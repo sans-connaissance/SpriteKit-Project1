@@ -14,6 +14,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     let player = SKSpriteNode(imageNamed: "player-motorbike")
     var touchingPlayer = false
+    let scoreLabel = SKLabelNode(fontNamed: "AvenirNextCondensed-Bold")
+    var score = 0 {
+        didSet {
+            scoreLabel.text = "Score: \(score)"
+        }
+    }
     
     var gameTimer: Timer?
     
@@ -24,6 +30,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let background = SKSpriteNode(imageNamed: "road.jpg")
         background.zPosition = -1
         addChild(background)
+        
+        
         
         if let particles = SKEmitterNode(fileNamed: "Mud") {
             particles.advanceSimulationTime(10)
@@ -42,6 +50,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //report on physical contact (also requires class protocol SKPhysicsContactDelegate above
         physicsWorld.contactDelegate = self
+        
+        score = 0
+        scoreLabel.zPosition = 2
+        scoreLabel.position.y = 300
+        addChild(scoreLabel)
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -77,6 +90,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
     override func update(_ currentTime: TimeInterval) {
         // this method is called before each frame is rendered
+        
+        score += 1
     }
     
     func createEnemy() {
