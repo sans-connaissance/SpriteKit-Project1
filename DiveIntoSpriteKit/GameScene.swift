@@ -148,7 +148,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func playerHit(_ node: SKNode) {
+        let sound = SKAction.playSoundFileNamed("explosion.wav", waitForCompletion: false)
+        run(sound)
         player.removeFromParent()
+
     }
     
 }
