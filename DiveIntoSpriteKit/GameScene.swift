@@ -168,6 +168,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         gameOver.zPosition = 10
         addChild(gameOver)
         
+        //wait for two seconds then run some code
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            // create a new scene from GameScene.sks
+            if let scene = GameScene(fileNamed: "GameScene") {
+                // make it stretch to fill all available space
+                scene.scaleMode = .aspectFill
+                
+                //present it immediately
+                self.view?.presentScene(scene)
+                
+            }
+            
+        }
+        
         if let particles = SKEmitterNode(fileNamed: "Explosion.sks") {
             particles.position = player.position
             particles.zPosition = 3
