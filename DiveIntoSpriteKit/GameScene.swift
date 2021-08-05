@@ -96,6 +96,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // this method is called before each frame is rendered
         
         score += 1
+        
+        if player.position.x < -400 {
+            player.position.x = -400
+        } else if player.position.x > 400 {
+            player.position.x = 400
+        }
+        
+        if player.position.y < -300 {
+            player.position.y = -300
+        } else if player.position.y > 300 {
+            player.position.y = 300
+        }
+        
     }
     
     func createEnemy() {
@@ -163,6 +176,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         player.removeFromParent()
         music.removeFromParent()
+
 
     }
     
