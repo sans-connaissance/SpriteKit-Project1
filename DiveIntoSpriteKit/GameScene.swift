@@ -60,7 +60,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scoreLabel.position.y = 300
         addChild(scoreLabel)
     }
-
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         // this method is called when the user touches the screen
         
@@ -85,17 +85,26 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
     }
     
-
+    
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         // this method is called when the user stops touching the screen
         touchingPlayer = false
         
     }
-
+    
     override func update(_ currentTime: TimeInterval) {
         // this method is called before each frame is rendered
         
-        score += 1
+        if player.parent != nil {
+            score += 1
+        }
+        
+        for node in children {
+            if node.position.x < -700 {
+                node.removeFromParent()
+            }
+        }
+        
         
         if player.position.x < -400 {
             player.position.x = -400
@@ -143,10 +152,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             addChild(sprite)
             
         } else {
-        
-        addChild(sprite2)
+            
+            addChild(sprite2)
         }
-
+        
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
@@ -190,8 +199,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         player.removeFromParent()
         music.removeFromParent()
-
-
+        
+        
     }
     
 }
