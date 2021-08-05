@@ -150,7 +150,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func playerHit(_ node: SKNode) {
         let sound = SKAction.playSoundFileNamed("explosion.wav", waitForCompletion: false)
         run(sound)
+        
+        let gameOver = SKSpriteNode(imageNamed: "gameOver-1")
+        gameOver.zPosition = 10
+        addChild(gameOver)
+        
+        
         player.removeFromParent()
+        music.removeFromParent()
 
     }
     
