@@ -155,6 +155,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         gameOver.zPosition = 10
         addChild(gameOver)
         
+        if let particles = SKEmitterNode(fileNamed: "Explosion.sks") {
+            particles.position = player.position
+            particles.zPosition = 3
+            addChild(particles)
+        }
         
         player.removeFromParent()
         music.removeFromParent()
